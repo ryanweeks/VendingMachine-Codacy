@@ -119,9 +119,17 @@ public class VendingMachine {
         if(temp.getAmount() > 0) {
             temp.setAmount(temp.getAmount() - 1);
             money += temp.getCost();
+
             return true; // deposit item
         }
         return false;
+    }
+
+    public void displayItems(){
+        for (int i = 0; i < items.size(); i++) {
+            // show sold out if not in machine
+            System.out.println((i+1) + ") " + items.get(i).getName() + ": " + items.get(i).getCost() + " - " + items.get(i).getAmount() + " Available");
+        }
     }
 
 }
