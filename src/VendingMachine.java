@@ -4,14 +4,27 @@ import java.util.ArrayList;
 public class VendingMachine {
     private ArrayList<Item> items;
     private double money;
+    private int color;
+    private static int BLUE = 0;
+    private static int RED = 1;
+    private static int YELLOW = 2;
+    private static int GREEN = 3;
 
     public VendingMachine() {
         money = 0;
+        color = BLUE;
         items = new ArrayList<>();
     }
 
     public VendingMachine(ArrayList<Item> items) {
         money = 0;
+        color = RED;
+        this.items = items;
+    }
+
+    public VendingMachine(ArrayList<Item> items, int color) {
+        money = 0;
+        this.color = color;
         this.items = items;
     }
 
@@ -76,6 +89,14 @@ public class VendingMachine {
         }
 
         return null;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 
     public double getTotalMoney(){
