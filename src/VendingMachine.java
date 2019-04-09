@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class VendingMachine {
@@ -16,16 +15,27 @@ public class VendingMachine {
         items = new ArrayList<>();
     }
 
-    public VendingMachine(ArrayList<Item> items) {
-        money = 0;
-        color = RED;
+    public VendingMachine(ArrayList<Item> items){
+        this.color = RED;
         this.items = items;
+        money = 0;
     }
 
-    public VendingMachine(ArrayList<Item> items, int color) {
-        money = 0;
+    public VendingMachine(ArrayList<Item> items, int color){
         this.color = color;
         this.items = items;
+        money = 0;
+    }
+
+    public VendingMachine(Item item1, Item item2, Item item3, Item item4, Item item5, int color){
+        this.color = color;
+        items = new ArrayList<>();
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        money = 0;
     }
 
     public void addItem(Item item) {
@@ -72,18 +82,6 @@ public class VendingMachine {
     public Item getItem(String name){
         for(int i = 0; i < items.size(); i++){
             if(items.get(i).getName() == name){
-                return items.get(i);
-            }
-        }
-
-        return null;
-    }
-
-    // We don't need this function - YAGNI
-    // Why would we need to return the item we are passing?
-    public Item getItem(Item item){
-        for(int i = 0; i < items.size(); i++){
-            if(items.get(i) == item){
                 return items.get(i);
             }
         }
