@@ -27,7 +27,7 @@ public class VendingMachine {
         money = 0;
     }
 
-    public VendingMachine(Item item1, Item item2, Item item3, Item item4, Item item5, int color){
+    public VendingMachine(Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, int color){
         this.color = color;
         items = new ArrayList<>();
         items.add(item1);
@@ -35,6 +35,7 @@ public class VendingMachine {
         items.add(item3);
         items.add(item4);
         items.add(item5);
+        items.add(item6);
         money = 0;
     }
 
