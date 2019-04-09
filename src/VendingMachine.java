@@ -90,6 +90,15 @@ public class VendingMachine {
         return null;
     }
 
+    public Item getItem(Item item){
+        for(int i = 0; i < items.size(); i++){
+            if(items.get(i) == item){
+                return items.get(i);
+            }
+        }
+        return null;
+    }
+
     public int getColor() {
         return color;
     }
@@ -139,7 +148,6 @@ public class VendingMachine {
         if(temp.getAmount() > 0) {
             temp.setAmount(temp.getAmount() - 1);
             money += temp.getCost();
-
             return true; // deposit item
         }
         return false;
